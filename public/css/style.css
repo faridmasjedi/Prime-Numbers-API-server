@@ -1,0 +1,25 @@
+*{
+  background: #ccc;
+}
+
+#container{
+  max-width:800px;
+  width:100%;
+  border:2px solid #ddd;
+  margin: 10px auto;
+  padding:10px;
+}
+
+h1{
+  font-size: 45px;
+  background-color: rgba(0,100,34,1);
+
+}
+header{
+  text-align: center;
+}
+a{
+  margin:0 10px;
+  font-size: 17px;
+  text-decoration: none;
+}
