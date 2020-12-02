@@ -5,6 +5,7 @@ const cors = require('cors');
 const server = express();
 server.use(express.static('public'));
 server.set('view-engine', ejs);
+// server.use(cors({origin: 'http://localhost:8080'}));
 server.use(cors({origin: 'https://crowded-toes.surge.sh'}));
 
 const PORT = process.env.PORT || 2357;

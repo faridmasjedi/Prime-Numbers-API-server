@@ -2,83 +2,135 @@
 <html lang="en" dir="ltr">
   <%- include('partial/head.ejs') %>
   <body>
-    <%- include('partial/nav.ejs') %>
 
-    <form action="/prime">
-      <label>
-        number to check:
-        <input name="pCheck" required>
-      </label>
-      <button>Click</button>
-    </form>
+    <div>
+      <%- include('partial/nav.ejs') %>
+    </div>
+    <div id='container2'>
 
-    <form action="/primeCheck">
-      <label>
-        number to check:
-        <input name="pCheck" required>
-      </label>
-      <button>Click</button>
-    </form>
+      <div id='results'>
+        <p><em>- check being primes -</em></p>
+        <p><em>- factors -</em></p>
+        <p><em>- the primes before this number -</em></p>
 
-    <form action="/primeDivisions">
-      <label>
-        number to check:
-        <input name="pCheck" required>
-      </label>
-      <button>Click</button>
-    </form>
+        <form action="/prime">
+          <label>
+            number:
+            <input name="pCheck" required>
+          </label>
+          <button>result</button>
+        </form>
 
-    <form action="/primes_to_a_number">
-      <label>
-        number to check:
-        <input name="pCheck" required>
-      </label>
-      <button>Click</button>
-    </form>
+      </div>
 
-    <form action="/primes_in_bound">
-      <label>
-        number to check:
-        <input name="rangeS" required>
-      </label>
-      <label>
-        number to check:
-        <input name="rangeE" required>
-      </label>
-      <button>Click</button>
-    </form>
+      <div id='results'>
+        <p><em>- check being primes -</em></p>
 
-    <form action="/primes_is_sophie">
-      <label>
-        number to check:
-        <input name="pCheck" required>
-      </label>
-      <button>Click</button>
-    </form>
+        <form action="/primeCheck">
+          <label>
+            number:
+            <input name="pCheck" required>
+          </label>
+          <button>result</button>
+        </form>
 
-    <form action="/primes_is_mersenne">
-      <label>
-        number to check:
-        <input name="pCheck" required>
-      </label>
-      <button>Click</button>
-    </form>
+      </div>
 
-    <form action="/primes_has_twin">
-      <label>
-        number to check:
-        <input name="pCheck" required>
-      </label>
-      <button>Click</button>
-    </form>
+      <div id='results'>
+        <p><em>- factors -</em></p>
 
-    <form action="/primes_is_isolated">
-      <label>
-        number to check:
-        <input name="pCheck" required>
-      </label>
-      <button>Click</button>
-    </form>
+        <form action="/primeDivisions">
+          <label>
+            number:
+            <input name="pCheck" required>
+          </label>
+          <button>result</button>
+        </form>
 
+      </div>
+
+      <div id='results'>
+        <p><em>- the primes before this number -</em></p>
+
+        <form action="/primes_to_a_number">
+          <label>
+            number:
+            <input name="pCheck" required>
+          </label>
+          <button>result</button>
+        </form>
+
+      </div>
+
+      <div id='results'>
+        <p><em>- the primes in a range -</em></p>
+
+        <form action="/primes_in_bound">
+          <label>
+            RangeS:
+            <input name="rangeS" required>
+          </label><br>
+          <label>
+            RangeE:
+            <input name="rangeE" required>
+          </label>
+          <button>result</button>
+        </form>
+
+      </div>
+
+      <div id='results'>
+        <p><em>- is it a sophie prime? -</em></p>
+
+        <form action="/primes_is_sophie">
+          <label>
+            number:
+            <input name="pCheck" required>
+          </label>
+          <button>result</button>
+        </form>
+
+      </div>
+
+      <div id='results'>
+        <p><em>- is it a mersenne prime? -</em></p>
+
+        <form action="/primes_is_mersenne">
+          <label>
+            number:
+            <input name="pCheck" required>
+          </label>
+          <button>result</button>
+        </form>
+
+      </div>
+
+      <div id='results'>
+        <p><em>- is this prime has twin? -</em></p>
+
+        <form action="/primes_has_twin">
+          <label>
+            number:
+            <input name="pCheck" required>
+          </label>
+          <button>result</button>
+        </form>
+
+      </div>
+
+      <div id='results'>
+        <p><em>- is this a isolated prime? -</em></p>
+
+        <form action="/primes_is_isolated">
+          <label>
+            number:
+            <input name="pCheck" required>
+          </label>
+          <button>result</button>
+        </form>
+
+      </div>
+
+    </div>
   </body>
 </html>

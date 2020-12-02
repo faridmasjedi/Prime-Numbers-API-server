@@ -1,131 +1,136 @@
-// The prime factors of 13195 are 5, 7, 13 and 29.
-//
-// What is the largest prime factor of the number 600851475143 ?
-
+// this is a memory array. when you run it for first time, this will save -
+//- new primes and can use it for next requests.
+// todo: instead of an array, use sql to have all the result in a table.
 let memory=[2,3];
 
+// this is a function written based on my pattern of prime.
+// the point: the output of this function is either the number itself, or another -
+//- number that is a factor of that number. if the output is the number itself, then -
+//- it is a prime number.
 function IsPrime(j){
   let s = 0
-
+  // for checking to be prime or not, it should just check it up to sqrt of a number
   let f = Math.floor(Math.sqrt(j))
 
+  // this is written according to the conditions of a pattern
   if ( (j-7)%6 === 0 ){
+    // dividing the range to for range to make it faster.
     for ( k=0; k<Math.ceil(f/4); k++ ){
-      u1 = 6*k + 5
-      u2 = u1 + 2
-      u3 = 6*(Math.ceil(f/4)+k) + 5
-      u4 = u3 + 2
-      u5 = 6 * (Math.ceil(f/2)+k) + 5
-      u6 = u5 + 2
-      u7 = 6*(3*Math.ceil(f/4)+k) + 5
-      u8 = u7 + 2
+      u1 = 6*k + 5;
+      u2 = u1 + 2;
+      u3 = 6*(Math.ceil(f/4)+k) + 5;
+      u4 = u3 + 2;
+      u5 = 6 * (Math.ceil(f/2)+k) + 5;
+      u6 = u5 + 2;
+      u7 = 6*(3*Math.ceil(f/4)+k) + 5;
+      u8 = u7 + 2;
 
       if ( ( j%u1 === 0 ) && ( j!==u1 ) ){
-          s1 = u1
-          s = 1
-          break
+          s1 = u1;
+          s = 1;
+          break;
       }
 
       if ( ( j%u2===0 ) && ( j!==u2 ) ) {
-        s1 = u2
-        s = 1
-        break
+        s1 = u2;
+        s = 1;
+        break;
       }
 
       if ( ( j%u3===0 ) && ( j!==u3 ) ) {
-        s1 = u3
-        s = 1
-        break
+        s1 = u3;
+        s = 1;
+        break;
       }
 
       if ( ( j%u4===0 ) && ( j!==u4 ) ) {
-        s1 = u4
-        s = 1
-        break
+        s1 = u4;
+        s = 1;
+        break;
       }
 
       if ( ( j%u5===0 ) && ( j!==u5 ) ){
-        s1 = u5
-        s = 1
-        break
+        s1 = u5;
+        s = 1;
+        break;
       }
 
       if ( ( j%u6===0 )&&( j!==u6 ) ) {
-        s1 = u6
-        s = 1
-        break
+        s1 = u6;
+        s = 1;
+        break;
       }
 
       if ( ( j%u7===0 ) && ( j!==u7 ) ) {
-        s1 = u7
-        s = 1
-        break
+        s1 = u7;
+        s = 1;
+        break;
       }
 
       if ( ( j%u8===0 ) && ( j!==u8 ) ) {
-        s1 = u8
-        s = 1
-        break
+        s1 = u8;
+        s = 1;
+        break;
       }
     }
 
   }else if ( (j-5)%6 === 0 ) {
     for ( k=0; k<Math.ceil(f/4); k++ ){
-      u1 = 6*k + 5
-      u2 = u1 + 2
-      u3 = 6*(Math.ceil(f/4)+k) + 5
-      u4 = u3 + 2
-      u5 = 6*(Math.ceil(f/2)+k) + 5
-      u6 = u5 + 2
-      u7 = 6*(3*Math.ceil(f/4)+k) + 5
-      u8 = u7 + 2
+      u1 = 6*k + 5;
+      u2 = u1 + 2;
+      u3 = 6*(Math.ceil(f/4)+k) + 5;
+      u4 = u3 + 2;
+      u5 = 6*(Math.ceil(f/2)+k) + 5;
+      u6 = u5 + 2;
+      u7 = 6*(3*Math.ceil(f/4)+k) + 5;
+      u8 = u7 + 2;
 
       if ( ( j%u1===0 ) && ( j!==u1 ) ) {
-        s1 = u1
-        s = 1
-        break
+        s1 = u1;
+        s = 1;
+        break;
       }
 
       if ( ( j%u2===0 ) && ( j!==u2 ) ) {
-        s1 = u2
-        s = 1
-        break
+        s1 = u2;
+        s = 1;
+        break;
       }
 
       if ( ( j%u3===0 ) && ( j!==u3 ) ) {
-        s1 = u3
-        s = 1
-        break
+        s1 = u3;
+        s = 1;
+        break;
       }
 
       if ( ( j%u4===0 ) && ( j!==u4 ) ) {
-        s1 = u4
-        s = 1
-        break
+        s1 = u4;
+        s = 1;
+        break;
       }
 
       if ( ( j%u5===0 ) && ( j!==u5 ) ) {
-        s1 = u5
-        s = 1
-        break
+        s1 = u5;
+        s = 1;
+        break;
       }
 
       if ( ( j%u6===0 ) && ( j!==u6 ) ) {
-        s1 = u6
-        s = 1
-        break
+        s1 = u6;
+        s = 1;
+        break;
       }
 
       if ( ( j%u7===0 ) && ( j!==u7 ) ) {
-        s1 = u7
-        s = 1
-        break
+        s1 = u7;
+        s = 1;
+        break;
       }
 
       if ( ( j%u8===0 ) && ( j!==u8 ) ) {
-        s1 = u8
-        s = 1
-        break
+        s1 = u8;
+        s = 1;
+        break;
       }
     }
   }
@@ -147,9 +152,10 @@ function IsPrime(j){
   }
 }
 
+// this function will give the factors of number.
 function Divisions_FM(j) {
   let ss = [];
-
+  //according to the IsPrime function, this number will be devided by its factors.
   while ( j>1 ) {
     ss.push(IsPrime(j));
     j = Math.floor(j/IsPrime(j));
@@ -157,11 +163,14 @@ function Divisions_FM(j) {
 
   ss.push(1);
 
+  // sort the outputs.
   return ss.sort(function f(a,b){return a-b;});
 }
 
+// this function will gives the primes to a number
 function Primes(j) {
   let result=[];
+  //at first it will check if it has all the answers in memory array or not.
   if (j<memory[memory.length-1]) {
     for(i=0;i<memory.length;i++){
       if (memory[i]>j) {return [result,result.length]}
@@ -170,7 +179,8 @@ function Primes(j) {
       }
     }
   }else{
-
+  // if the number is bigger that the last number that we have in memory, it is -
+  // gonna find the rest primes.
   for (i=memory[memory.length-1]+1; i<=j; i++){
     if (IsPrime(i) === i){
       memory.push(i);
@@ -182,9 +192,10 @@ function Primes(j) {
 
 }
 
-
+// this function gonna give the primes in a range.
 function MakePrimeByBound(r1,r2){
   let result=[];
+  // it will check if the range is in the memory or not.
   if (r2<=memory[memory.length-1]) {
     for(i=0;i<memory.length;i++){
       if (memory[i]>r2) {return [result,result.length]}
@@ -199,6 +210,7 @@ function MakePrimeByBound(r1,r2){
         result.push(memory[i])
       }
     }
+    // according to the pattern it will return the rest primes.
     let l1 = 0;
     let l2 = 0;
     let s = 0;
@@ -257,6 +269,7 @@ function MakePrimeByBound(r1,r2){
   }
 }
 
+// it will check if the prime is sophie-prime or not
 function IsSophiePrime(num){
   const isPrime = IsPrime(num) === num ;
   if (isPrime) {
@@ -271,6 +284,7 @@ function IsSophiePrime(num){
   }
 }
 
+// this will check if the number is mersenne prime or not.
 function IsMersennePrime(num){
   const isPrime = IsPrime(num) === num ;
   if (isPrime){
@@ -286,6 +300,7 @@ function IsMersennePrime(num){
   }
 }
 
+// this will check if the prime is a twin one or not.
 function IsTwinPrime(num){
   let result=[];
 
@@ -296,8 +311,7 @@ function IsTwinPrime(num){
 
     const isMersenneFirst = IsPrime(mersennePrimeFirst) === mersennePrimeFirst;
     const isMersenneSecond = IsPrime(mersennePrimeSecond) === mersennePrimeSecond;
-    // console.log(isMersenneFirst,mersennePrimeFirst)
-    // console.log(isMersenneSecond,mersennePrimeSecond)
+
     if (isMersenneFirst) {
       result = [true,mersennePrimeFirst];
     }else{
@@ -311,12 +325,13 @@ function IsTwinPrime(num){
     }
 
   }else{
+    // if the input number is not prime, this will return
     result = [false,false,false,false];
   }
   return result;
 }
 
-
+// this will check if the number is isolated prime or not.
 function IsIsolatedPrime(num){
   const isPrime = IsPrime(num) === num;
 

@@ -1,3 +1,7 @@
+// todo:
+// this should do more things about trigonometry.
+// give polar points out put to can plot the spiral of prime numbers.
+// this gives the sin(deg), cos(deg), tan(deg) and cot(deg) now.
 function trigonometry(degree) {
   const degree_rad = degree*Math.PI/180;
   let tan, cot,sin,cos,sign;
