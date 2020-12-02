@@ -6,7 +6,7 @@ const server = express();
 server.use(express.static('public'));
 server.set('view-engine', ejs);
 // server.use(cors({origin: 'http://localhost:8080'}));
-server.use(cors({origin: 'decorous-flower.surge.sh'}));
+server.use(cors({origin: 'https://decorous-flower.surge.sh'}));
 
 const PORT = process.env.PORT || 2357;
 
