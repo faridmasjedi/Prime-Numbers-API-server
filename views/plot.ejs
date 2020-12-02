@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <%- include('partial/head.ejs') %>
+  <body>
+    <%- include('partial/nav.ejs') %>
+
+    <form action="/prime">
+      <label>
+        x_start:
+        <input name="xS" required>
+      </label>
+      <label>
+        x_end:
+        <input name="xL" required>
+      </label>
+      <button>Click</button>
+    </form>
+
+  </body>
+</html>
