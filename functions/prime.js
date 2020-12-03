@@ -170,12 +170,15 @@ function Divisions_FM(j) {
 // this function will gives the primes to a number
 function Primes(j) {
   let result=[];
+
   for (let i=0; i<=j; i++){
     if (IsPrime(i) === i){
       result.push(i);
     }
   }
   return [result,result.length];
+
+  // }
 
 }
 
@@ -184,17 +187,17 @@ function MakePrimeByBound(r1,r2){
   let result=[];
   // it will check if the range is in the memory or not.
   if (r2<=memory[memory.length-1]) {
-    for( ii=0;ii<memory.length;ii++){
-      if (memory[ii]>r2) {return [result,result.length]}
-      if (memory[ii]<=r2 && memory[ii]>=r1){
-        result.push(memory[ii])
+    for( i=0;i<memory.length;i++){
+      if (memory[i]>r2) {return [result,result.length]}
+      if (memory[i]<=r2 && memory[i]>=r1){
+        result.push(memory[i])
       }
     }
   }else{
 
-    for( ii=0;ii<memory.length;ii++){
-      if (memory[ii]<=r2 && memory[ii]>=r1){
-        result.push(memory[ii])
+    for( i=0;i<memory.length;i++){
+      if (memory[i]<=r2 && memory[i]>=r1){
+        result.push(memory[i])
       }
     }
 
@@ -210,23 +213,23 @@ function MakePrimeByBound(r1,r2){
 
     let f = Math.floor(Math.sqrt(r2))
 
-    for( ii=r1; ii<r2+1; ii++){
+    for( i=r1; i<r2+1; i++){
 
-      if ((ii-5)%6 === 0){
-        for ( kk=0; kk<f+1;kk++){
-          if ((ii%(6*kk+5)===0) && (ii!==(6*kk+5))){
+      if ((i-5)%6 === 0){
+        for ( k=0; k<f+1;k++){
+          if ((i%(6*k+5)===0) && (i!==(6*k+5))){
             s=1
             break
           }
-          if ((ii%(6*kk+7)===0) && (ii!==(6*kk+7))){
+          if ((i%(6*k+7)===0) && (i!==(6*k+7))){
             ss=1
             break
           }
         }
 
         if (s===0 && ss===0){
-          result.push(ii)
-          memory.push(ii)
+          result.push(i)
+          memory.push(i)
         }
 
       }
@@ -234,20 +237,20 @@ function MakePrimeByBound(r1,r2){
       s = 0
       ss = 0
 
-      if ((ii-7)%6 === 0){
-        for( kk=0; kk<f+1; kk++){
-          if ((ii%(6*kk+5)===0) && (ii!==(6*kk+5))){
+      if ((i-7)%6 === 0){
+        for( k=0; k<f+1; k++){
+          if ((i%(6*k+5)===0) && (i!==(6*k+5))){
             s=1
             break
           }
-          if ((ii%(6*kk+7)===0) && (ii!==(6*kk+7))){
+          if ((i%(6*k+7)===0) && (i!==(6*k+7))){
             ss=1
             break
           }
         }
-        if (s===0 && ss===0 && ii!==1){
-          result.push(ii)
-          memory.push(ii)
+        if (s===0 && ss===0 && i!==1){
+          result.push(i)
+          memory.push(i)
 
         }
       }
