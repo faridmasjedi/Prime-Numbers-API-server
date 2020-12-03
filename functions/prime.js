@@ -15,7 +15,7 @@ function IsPrime(j){
   // this is written according to the conditions of a pattern
   if ( (j-7)%6 === 0 ){
     // dividing the range to for range to make it faster.
-    for ( k=0; k<Math.ceil(f/4); k++ ){
+    for (let k=0; k<Math.ceil(f/4); k++ ){
       u1 = 6*k + 5;
       u2 = u1 + 2;
       u3 = 6*(Math.ceil(f/4)+k) + 5;
@@ -75,7 +75,7 @@ function IsPrime(j){
     }
 
   }else if ( (j-5)%6 === 0 ) {
-    for ( k=0; k<Math.ceil(f/4); k++ ){
+    for (let k=0; k<Math.ceil(f/4); k++ ){
       u1 = 6*k + 5;
       u2 = u1 + 2;
       u3 = 6*(Math.ceil(f/4)+k) + 5;
@@ -170,25 +170,12 @@ function Divisions_FM(j) {
 // this function will gives the primes to a number
 function Primes(j) {
   let result=[];
-  //at first it will check if it has all the answers in memory array or not.
-  if (j<memory[memory.length-1]) {
-    for(i=0;i<memory.length;i++){
-      if (memory[i]>j) {return [result,result.length]}
-      if (memory[i]<=j){
-        result.push(memory[i])
-      }
-    }
-  }else{
-  // if the number is bigger that the last number that we have in memory, it is -
-  // gonna find the rest primes.
-  for (i=memory[memory.length-1]+1; i<=j; i++){
+  for (let i=0; i<=j; i++){
     if (IsPrime(i) === i){
-      memory.push(i);
+      result.push(i);
     }
   }
-  return [memory,memory.length];
-
-  }
+  return [result,result.length];
 
 }
 
@@ -197,17 +184,17 @@ function MakePrimeByBound(r1,r2){
   let result=[];
   // it will check if the range is in the memory or not.
   if (r2<=memory[memory.length-1]) {
-    for(i=0;i<memory.length;i++){
-      if (memory[i]>r2) {return [result,result.length]}
-      if (memory[i]<=r2 && memory[i]>=r1){
-        result.push(memory[i])
+    for( ii=0;ii<memory.length;ii++){
+      if (memory[ii]>r2) {return [result,result.length]}
+      if (memory[ii]<=r2 && memory[ii]>=r1){
+        result.push(memory[ii])
       }
     }
   }else{
 
-    for(i=0;i<memory.length;i++){
-      if (memory[i]<=r2 && memory[i]>=r1){
-        result.push(memory[i])
+    for( ii=0;ii<memory.length;ii++){
+      if (memory[ii]<=r2 && memory[ii]>=r1){
+        result.push(memory[ii])
       }
     }
 
@@ -223,23 +210,23 @@ function MakePrimeByBound(r1,r2){
 
     let f = Math.floor(Math.sqrt(r2))
 
-    for( i=r1; i<r2+1; i++){
+    for( ii=r1; ii<r2+1; ii++){
 
-      if ((i-5)%6 === 0){
-        for (k=0; k<f+1;k++){
-          if ((i%(6*k+5)===0) && (i!==(6*k+5))){
+      if ((ii-5)%6 === 0){
+        for ( kk=0; kk<f+1;kk++){
+          if ((ii%(6*kk+5)===0) && (ii!==(6*kk+5))){
             s=1
             break
           }
-          if ((i%(6*k+7)===0) && (i!==(6*k+7))){
+          if ((ii%(6*kk+7)===0) && (ii!==(6*kk+7))){
             ss=1
             break
           }
         }
 
         if (s===0 && ss===0){
-          result.push(i)
-          memory.push(i)
+          result.push(ii)
+          memory.push(ii)
         }
 
       }
@@ -247,20 +234,20 @@ function MakePrimeByBound(r1,r2){
       s = 0
       ss = 0
 
-      if ((i-7)%6 === 0){
-        for(k=0; k<f+1; k++){
-          if ((i%(6*k+5)===0) && (i!==(6*k+5))){
+      if ((ii-7)%6 === 0){
+        for( kk=0; kk<f+1; kk++){
+          if ((ii%(6*kk+5)===0) && (ii!==(6*kk+5))){
             s=1
             break
           }
-          if ((i%(6*k+7)===0) && (i!==(6*k+7))){
+          if ((ii%(6*kk+7)===0) && (ii!==(6*kk+7))){
             ss=1
             break
           }
         }
-        if (s===0 && ss===0 && i!==1){
-          result.push(i)
-          memory.push(i)
+        if (s===0 && ss===0 && ii!==1){
+          result.push(ii)
+          memory.push(ii)
 
         }
       }
