@@ -210,13 +210,14 @@ function MakePrimeByBound(r1,r2){
         result.push(memory[i])
       }
     }
+
     // according to the pattern it will return the rest primes.
     let l1 = 0;
     let l2 = 0;
     let s = 0;
     let ss = 0;
 
-    r1 = memory[memory.length-1]+1;
+    // r1 = memory[memory.length-1]+1;
     l1 = (r1-5);
     l2 = (r1-7);
 
@@ -264,9 +265,11 @@ function MakePrimeByBound(r1,r2){
         }
       }
     }
+
     return [result, result.length];
 
   }
+
 }
 
 // it will check if the prime is sophie-prime or not
