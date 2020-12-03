@@ -178,87 +178,20 @@ function Primes(j) {
   }
   return [result,result.length];
 
-  // }
-
 }
 
 // this function gonna give the primes in a range.
 function MakePrimeByBound(r1,r2){
-  let result=[];
-  // it will check if the range is in the memory or not.
-  if (r2<=memory[memory.length-1]) {
-    for( i=0;i<memory.length;i++){
-      if (memory[i]>r2) {return [result,result.length]}
-      if (memory[i]<=r2 && memory[i]>=r1){
-        result.push(memory[i])
-      }
+
+  let first_res=Primes(r2)[0];
+  let res = [];
+  for (i=0; i<first_res.length; i++){
+    if (first_res[i]>=r1){
+      res.push(first_res[i]);
     }
-  }else{
-
-    for( i=0;i<memory.length;i++){
-      if (memory[i]<=r2 && memory[i]>=r1){
-        result.push(memory[i])
-      }
-    }
-
-    // according to the pattern it will return the rest primes.
-    let l1 = 0;
-    let l2 = 0;
-    let s = 0;
-    let ss = 0;
-
-    // r1 = memory[memory.length-1]+1;
-    l1 = (r1-5);
-    l2 = (r1-7);
-
-    let f = Math.floor(Math.sqrt(r2))
-
-    for( i=r1; i<r2+1; i++){
-
-      if ((i-5)%6 === 0){
-        for ( k=0; k<f+1;k++){
-          if ((i%(6*k+5)===0) && (i!==(6*k+5))){
-            s=1
-            break
-          }
-          if ((i%(6*k+7)===0) && (i!==(6*k+7))){
-            ss=1
-            break
-          }
-        }
-
-        if (s===0 && ss===0){
-          result.push(i)
-          memory.push(i)
-        }
-
-      }
-
-      s = 0
-      ss = 0
-
-      if ((i-7)%6 === 0){
-        for( k=0; k<f+1; k++){
-          if ((i%(6*k+5)===0) && (i!==(6*k+5))){
-            s=1
-            break
-          }
-          if ((i%(6*k+7)===0) && (i!==(6*k+7))){
-            ss=1
-            break
-          }
-        }
-        if (s===0 && ss===0 && i!==1){
-          result.push(i)
-          memory.push(i)
-
-        }
-      }
-    }
-
-    return [result, result.length];
-
   }
+
+  return [res, res.length];
 
 }
 
