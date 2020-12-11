@@ -40,7 +40,7 @@ the css file.
 * all the commands that a server need to tackle with a request has been written.
 * a port has been defined.
 * using cors as a server can make a connection with another web applications.
-* different get request for having different result on different requests about prime numbers.
+* different get requests for having different results on different requests about prime numbers.
 
 ### functions directory
 * different functions to get different result about different prime numbers properties.
